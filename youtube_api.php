@@ -33,7 +33,9 @@ if ($youtube_api) {
     $response = curl_exec($curl);
     curl_close($curl);
 
-    //var_dump($response);  // Exibe a resposta recebida
+     //var_dump($response);  // Exibe a resposta recebida
+	echo $response; 
+   
 } else {
     echo "Parameter 'videoid' not provided or invalid.";
 }
