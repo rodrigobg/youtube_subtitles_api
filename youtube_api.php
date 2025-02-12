@@ -3,8 +3,11 @@
 // Include the vendor file to get the function
 include_once ("vendor/autoload.php");
 
-// Defina os valores do vídeo e chave API
-$videoid = "Vt-yaSLqopE";  // O 'videoid' pode ser dinâmico, dependendo da requisição
+// Set video and API key values
+//$videoid = "VX8qvLytsJs";  // O 'videoid' pode ser dinâmico, dependendo da requisição
+
+$videoid = $_GET["videoid"] ?? null;
+
 $api_key = "YOUR_API_KEY_HERE";
 //
 
@@ -30,7 +33,7 @@ if ($youtube_api) {
     $response = curl_exec($curl);
     curl_close($curl);
 
-    var_dump($response);  // Exibe a resposta recebida
+    //var_dump($response);  // Exibe a resposta recebida
 } else {
     echo "Parameter 'videoid' not provided or invalid.";
 }
